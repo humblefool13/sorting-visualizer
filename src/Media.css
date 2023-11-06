@@ -1,0 +1,39 @@
+@media only screen and (max-width: 780px) {
+  .algoInfo {
+    width: 85%;
+    padding: 20px 2px;
+    margin: auto;
+    border: 3px solid #b2abf2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .algoInfo div {
+    color: #ff581c;
+    font-size: 25px;
+    font-weight: 800;
+  }
+
+  .header {
+    position: relative;
+    padding: 0px 25px 30px 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #89043d;
+  }
+
+  .wrapper {
+    min-width: 200px;
+    padding: 0 0 25px 0;
+  }
+
+  .button {
+  }
+}

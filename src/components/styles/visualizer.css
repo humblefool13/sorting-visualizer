@@ -9,6 +9,7 @@
 }
 
 .sortingBars {
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -19,9 +20,15 @@
 .bars {
   width: 10px;
   background-color: #ff7f50;
-  margin-left: 4px;
   display: inline-block;
   border-radius: 10px;
+}
+
+.bar-containers {
+  padding: 0px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .algoInfo {
@@ -78,4 +85,8 @@
   font-weight: 700;
   font-size: 30px;
   padding-bottom: 20px;
+}
+
+.bar-label {
+  color: white;
 }

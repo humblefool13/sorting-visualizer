@@ -8,7 +8,7 @@ const Visualizer = () => {
   const [primaryArray, setPrimaryArray] = useState([]);
   const [algorithm, setAlgorithm] = useState("bubbleSort");
   const [animationSpeed, setAnimationSpeed] = useState(150);
-  const [ARRAYSIZE, setArraySize] = useState(50);
+  const [ARRAYSIZE, setArraySize] = useState(30);
   const [disableOptions, setDisableOptions] = useState(false);
   const [startTime, setStartTime] = useState(null);
 
@@ -49,6 +49,13 @@ const Visualizer = () => {
   useEffect(() => {
     randomizeArray();
   }, [ARRAYSIZE]);
+
+  useEffect(() => {
+    if (disableOptions) {
+      const element = document.getElementsByClassName("bar-label")[ARRAYSIZE];
+      if (element) element.remove();
+    }
+  }, [primaryArray]);
 
   const sleep = (milliSeconds) => {
     return new Promise((resolve) => setTimeout(resolve, milliSeconds));
@@ -417,12 +424,15 @@ const Visualizer = () => {
         {primaryArray &&
           primaryArray.map((val, key) => {
             return (
-              <div
-                className="bars"
-                id={key}
-                key={key}
-                style={{ height: val }}
-              ></div>
+              <div className="bar-containers">
+                <div
+                  className="bars"
+                  id={key}
+                  key={key}
+                  style={{ height: val }}
+                ></div>
+                <div className="bar-label">{val}</div>
+              </div>
             );
           })}
       </div>

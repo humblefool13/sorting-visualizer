@@ -10,6 +10,7 @@ const Visualizer = () => {
   const [animationSpeed, setAnimationSpeed] = useState(150);
   const [ARRAYSIZE, setArraySize] = useState(50);
   const [disableOptions, setDisableOptions] = useState(false);
+  const [startTime, setStartTime] = useState(null);
 
   const description = {
     "Bubble Sort":
@@ -63,6 +64,7 @@ const Visualizer = () => {
   };
 
   const handleSorting = () => {
+    setStartTime(Date.now());
     setDisableOptions(true);
     switch (algorithm) {
       case "bubbleSort":
@@ -357,6 +359,25 @@ const Visualizer = () => {
     return i + 1;
   };
 
+  const formatTime = (timestamp) => {
+    const timestampDifference = Date.now() - timestamp;
+    const timestampDifferenceCentiSeconds = parseInt(timestampDifference / 10);
+    const timestampDifferenceSeconds = parseInt(
+      timestampDifferenceCentiSeconds / 100
+    );
+    if (timestampDifferenceSeconds <= 60) {
+      return `Time taken: ${timestampDifferenceSeconds}.${
+        timestampDifferenceCentiSeconds % 100
+      } seconds`;
+    } else {
+      const timeSeconds = timestampDifferenceSeconds % 60;
+      const timeMinutes = parseInt(timestampDifferenceSeconds / 60);
+      return `Time taken: ${timeMinutes} minute ${timeSeconds}.${
+        timestampDifferenceCentiSeconds % 100
+      } seconds`;
+    }
+  };
+
   return (
     <div style={{ width: "100%" }}>
       <div className="header">
@@ -405,6 +426,13 @@ const Visualizer = () => {
             );
           })}
       </div>
+      {algorithm.name !== undefined && (
+        <div className="timer">
+          {disableOptions
+            ? formatTime(startTime)
+            : document.getElementsByClassName("timer")[0].innerHTML}
+        </div>
+      )}
       {algorithm.name !== undefined && (
         <div className="algoInfo">
           <div>Algorithm: {algorithm.name}</div>

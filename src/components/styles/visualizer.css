@@ -70,3 +70,12 @@
   color: white;
   font-weight: 700;
 }
+
+.timer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  padding-bottom: 20px;
+}

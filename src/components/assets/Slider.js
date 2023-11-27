@@ -11,7 +11,7 @@ const Slider = ({ speed, onChange, disabled }) => {
               type="radio"
               name="speed"
               id="slow"
-              value={200}
+              value={400}
               disabled={disabled}
             />
             <label htmlFor="slow" current-speed="Slow"></label>
@@ -19,7 +19,7 @@ const Slider = ({ speed, onChange, disabled }) => {
               type="radio"
               name="speed"
               id="medium"
-              value={150}
+              value={175}
               defaultChecked
               disabled={disabled}
             />
@@ -28,7 +28,7 @@ const Slider = ({ speed, onChange, disabled }) => {
               type="radio"
               name="speed"
               id="fast"
-              value={100}
+              value={50}
               disabled={disabled}
             />
             <label htmlFor="fast" current-speed="Fast"></label>
@@ -47,7 +47,7 @@ const Slider = ({ speed, onChange, disabled }) => {
               type="radio"
               name="size"
               id="small"
-              value={25}
+              value={20}
               disabled={disabled}
             />
             <label htmlFor="small" current-speed="Small"></label>
@@ -55,7 +55,7 @@ const Slider = ({ speed, onChange, disabled }) => {
               type="radio"
               name="size"
               id="medium-size"
-              value={50}
+              value={30}
               defaultChecked
               disabled={disabled}
             />
@@ -64,7 +64,7 @@ const Slider = ({ speed, onChange, disabled }) => {
               type="radio"
               name="size"
               id="large"
-              value={75}
+              value={40}
               disabled={disabled}
             />
             <label htmlFor="large" current-speed="Large"></label>

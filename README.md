@@ -9,4 +9,4 @@ The Sorting Visualizer is a dynamic and educational data structures and algorith
 4. Merge Sort
 5. Quick Sort
 ***
-The project is a ReactJS web application and can be viewed live [here](https://sv-humblefool13.netlify.app/)
+The project is a ReactJS web application and can be viewed live [here](https://sorting.humblefool13.dev/)
